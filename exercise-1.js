@@ -1,19 +1,37 @@
 // ***For all the exercises, be sure to log the output of the function to the console.***
 
         /************************************************************************************/
-        // Write a JavaScript function that iterates the integers from 1 to 100. For multiples of 3 print "TEK" instead of the number and for multiples of 5, print "camp." For numbers that are multiples of both 3 and 5, print "TEKcamp."
+        // Write a JavaScript function that iterates the integers from 1 to 100. For multiples of 3 print "TEK" instead of the number and 
+        //for multiples of 5, print "camp." For numbers that are multiples of both 3 and 5, print "TEKcamp."
 
         //your code...
-        function tekCamp() {}
-        // tekCamp();
+        function tekCamp() {
+            for (let i = 1; i < 101; i++) {
+                console.log(i)
+                if (i == 3){
+                    console.log("TEK")
+                }
+            }
+        }
+        tekCamp();
 
 
 
         /************************************************************************************/
         //Write a function that converts the current temperature from Fahrenheit to Celsius. 
 
-        //your code...
-        function farenheitCelsius() {
+        function convert(degree) {
+            var x;
+            if (degree == "C") {
+              x = document.getElementById("c").value * 9 / 5 + 32;
+              document.getElementById("f").value = Math.round(x);
+            } else {
+              x = (document.getElementById("f").value -32) * 5 / 9;
+              document.getElementById("c").value = Math.round(x);
+            }
+          }
+        function farenheitCelsius()
+         {
 
         }
 
@@ -24,9 +42,19 @@
         //Write a function that converts the Celsius temperature back to Fahrenheit. 
 
         //your code...
-        function celsiusFarenheit() {
-
+        {function cToF()
+            {
+            var input = 1;
+            while (input <= 20)
+            {
+            var fToCel = (input * 9 / 5)+32;
+            console.log(input+"C" + " - " + fToCel + "F");
+            input++;
+            }
+            }
+            cToF();
         }
+        
 
 
 
@@ -36,10 +64,19 @@
         // Write a function to determine if someone is old enough to vote.  The function should return a boolean of true or false.
 
         //your code...
+        
+         
         function canVote(age) {
+
+        
+            if(age>=18){
+                return true;
+            }
+            else{
             return false;
         }
-
+    }
+        
 
 
 
@@ -49,10 +86,12 @@
         /************************************************************************************/
         // Write a function that converts a string to an array. It should return an array.  
 
-        //your code...
-        function strToArr() {
-            return [];
+        //your code... 
+        function strToArr(str) {
+            let newArr = Array.from(str);
+            return newArr 
         }
+        console.log(strToArr("Tekcamp"));
 
 
 
@@ -65,9 +104,12 @@
 
         //your code...
         function reversePhone(number) {
+          
+            number = number + "";
+            return number.split("").reverse().join("");
             
         }
-
+        console.log(reversePhone(3013105883));
 
 
 
@@ -76,6 +118,18 @@
         // Write a function that returns a car object using some given info about your car. Required inputs are the make, model, year, and color.
 
         //your code...
+        function Car(make, model, year, color) {
+            this.make = make;
+            this.model = model;
+            this.year = year;
+            this.color = color;
+          }
+          
+          const car1 = new Car('Toyota ', 'Tacoma  ', 2021, 'White');
+    
+          console.log(car1);
+            
+                        
 
 
 
@@ -83,11 +137,25 @@
 
 
         /************************************************************************************/
-        // Write a function that accepts a list of numbers.  The function should identify each number as being even or odd.  The function should output a set of key value pairs, with the key being the number, and the value being the string "even" or "odd".
+        // Write a function that accepts a list of numbers.  
+        //The function should identify each number as being even or odd. 
+        // The function should output a set of key value pairs, 
+        //with the key being the number, and the value being the string "even" or "odd".
 
         //example : [10,23,3,4] => function() => {10 : 'even', 23 : 'odd', 3 : 'odd', 4 : 'even'}
 
         //your code...
+        Number([10,23,3,4]);
+        function Number(arr) {
+            for(let i = 0; i < arr.length; i++) {
+                if(arr[i] % 2 === 0) {
+                    console.log(arr[i] + " ,  even");
+                }
+                else {
+                    console.log(arr[i] + " , odd");
+                }
+            }
+        }
 
 
 
@@ -96,19 +164,31 @@
 
 
         /************************************************************************************/
-        const numbers = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
-        // Write a "for" loop that console.log()'s the first value in the  array, and every 3rd number, i.e. 0, 3, 6, 9: the zeroth, third, sixth, and ninth values.
+       // const numbers = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
+        // Write a "for" loop that console.log()'s the first value in the  array, 
+        //and every 3rd number, i.e. 0, 3, 6, 9: 
+        //the zeroth, third, sixth, and ninth values.
 
         //your code...
+        const numbers = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
+        for(let i = 0; i < numbers.length; i++) {
+            if(i % 3 === 0) {
+                console.log(i);
+            }
+        }
 
 
 
         /************************************************************************************/
         const foodArray = [ 'potatoes', 'tamales', 'lemon','strawberries','chocolate', 'pudding', {program : 'TEKcamp'} ];
-        //access the value of the last element of the array and set a variable named bootcamp to it.  Print the bootcamp variable to the console.
-
-        const adjectiveArray = [ 'salty', 'spicy', 'sour', 'sweet', 'rich','creamy','intense'];
-        // Using both the foodArray and the adjectiveArray, write a "for" loop that console.log()'s a sentence for each corresponding value in the arrays. Add the word "is" or "are" depending on if the food is singular or plural.  i.e. "Potatoes are salty", "Lemon is sour".
+        //access the value of the last element of the array and set it to a variable called school.  print the school variable to the console.
+        const foodArray = [ 'potatoes', 'tamales', 'lemon','strawberries','chocolate', 'pudding', {program : 'TEKcamp'} ];
+        let lastElement = foodArray[foodArray.length -1];
+        var school = lastElement;
+        console.log(school);
+    
+        const adjectiveArray = [ 'salty', 'spicy', 'sour', 'sweet', 'rich','creamy','amazing'];
+        // Using both the foodArray and the adjectiveArray, write "for" loop that console.log()'s a sentence for each corresponding value in the arrays. Add the word "is" or "are" depending on if the food is singular or plural.  i.e. "Potatoes are salty", "Lemon is sour".
 
 
         /************************************************************* */
@@ -121,6 +201,11 @@
 
 
         //your code...
+        let i = 0;
+        while(i < 10) {
+            i++;
+            console.log(" the value of i in the loop is : " + i);
+        }
 
 
 
@@ -130,22 +215,39 @@
         //use javascript to compute the value of the above statement. Each individual operation needs to be a function expression. run all the functions after defining them, and print the answer to the console.
 
         //your code...
-
+        function add(int, num) {
+            return sum = int + num;
+        }
+        function exp(int) {
+            return value = int ** 2;
+        }
+        function multiply(sum, int) {
+            return product = sum * int;
+        }
+        function divide(num, int) {
+            return number = (product / value);
+        }
+        console.log(add(30, 2));
+        console.log(exp(10));
+        console.log(multiply(sum, 20));
+        console.log(divide(product, value));
 
         /************************************************************* */
-        //Determine whether the following values are "truthy" or "falsy".  console.log() the value, whether the value is 'truthy' or 'falsy', along with your reasoning why using String interpolation values : 
+        //Determine whether the following values are "truthy" or "falsy".  
+        //console.log() the value, whether the value is 'truthy' or 'falsy', 
+        //along with your reasoning why using String interpolation values : 
 
         // ex : 3 is truthy, because it is a number, and numbers are type coerced as 'true' when performing logical (boolean) operations.
 
-        // 20
-        // 0
-        // "zero";
+        // 20  console.log(`${!!20 ? "truthy" : "falsey"} , because it is a positive number`);
+        // 0   console.log(`${!!0 ? "truthy" : "falsey"} , because it is a zero number`);
+        // "zero";  (`${!!"zero" ? "truthy" : "falsey"} , because it is a defined and non-empty string`);
         // const zero = 20;
-        // null
+        // null console.log(`${!!null ? "truthy" : "falsey"} , because it is a single null value`)
         // "0"
         // !""
         // {}
-        // () => {console.log("hello TEKcamp!");
+        // () => {console.log("hello TEKcamp!"); 
         // 125
         // undefined
         // ""
@@ -463,7 +565,8 @@
 
 
         /************************************************************* */
-        //Research a new feature of ES6+ and create an example of it's use case here.  Be sure to write comments explaining what the feature is and why it is useful.
+        //Research a new feature of ES6+ and create an example of it's use case here. 
+        // Be sure to write comments explaining what the feature is and why it is useful.
 
 
             //your code...
@@ -471,23 +574,29 @@
 
 
         /************************************************************* */
-        //Add an example of the 5 primary JavaScript data types to the given mapObj.  The key is an example data type, and the value is the name of the data type.  An object data type has already been set as the 1st key / val pair.
+        //Add an example of the 5 primary JavaScript data types to the given mapObj.  
+        //The key is an example data type, and the value is the name of the data type.  An object data type has already been set as the 1st key / val pair.
 
         const mapObj = new Map();
         mapObj.set({company : "TEKsystems"},"object");
 
         console.log(mapObj.has({company : "TEKsystems"}));
 
-        //The above console.log() statmeent returns false.  Write another console.log() statement explaining why this line of code prints false.  Refactor the code `mapObj.set()`, so the code : `mapObj.has() returns true.  The goal is to successfully check and see if {company : "TEKsystems"} exists in the mapObj.
+        //The above console.log() statmeent returns false.  Write another console.log() statement explaining why this line of code prints false.
+        //  Refactor the code `mapObj.set()`, so the code : `mapObj.has() returns true.  The goal is to successfully check and see if {company : "TEKsystems"} exists in the mapObj.
 
         //your code...
 
 
-        //loop through the mapObj and create a new array of only the data types, leaving out the example keys of the mapObj.  Use array methods to do this.  Example output : ['string',number','boolean',array','object']
+        //loop through the mapObj and create a new array of only the data types,
+        // leaving out the example keys of the mapObj.  Use array methods to do this.  Example output : ['string',number','boolean',array','object']
 
 
         /************************************************************* */
-        //Create 4 mathematical function expressions, add,subtract,multiply,divide.  put them in an array, and create a doMath() function that randomly selects one of the mathematical operations whenever it is invoked.  The doMath() function should print to the console the mathetmatical function that was carried out.  The doMath() function should return the computed value of any operation performed.
+        //Create 4 mathematical function expressions, add,subtract,multiply,divide.  
+        //put them in an array, and create a doMath() function that randomly selects one of the mathematical operations whenever it is invoked.
+        //  The doMath() function should print to the console the mathetmatical function that was carried out.  
+        //The doMath() function should return the computed value of any operation performed.
 
         // ex : 2,3 => doMath(2,3) => adding : 5
         const operations = [];
@@ -498,17 +607,30 @@
 
 
         /************************************************************* */
-        //- Create a Higher Order Function called multiple(x) that takes a single parameter.  This HOF should return another function fn(y) that accepts another single parameter y.  This inner function should compute the product of it's parameter with the parameter passed into multiple.  Use this returned "first-class" function to compute triples of any given number.
+        //- Create a Higher Order Function called multiple(x) that takes 
+        //a single parameter.  This HOF should return another function fn(y) that accepts another single parameter y.  This inner function should compute the product of it's parameter with the parameter passed into multiple.  Use this returned "first-class" function to compute triples of any given number.
 
         //your code...
+        function multiple(x) {
+            function fn(y) {
+                let z = y * x;
+                return fn();
+            }
+            return x;
+        }
+        console.log(multiple(3));
 
 
-        //- Write an outer function called stockGain that has cost basis (basis) as a parameter; declare a variable called message that holds " is how much the stock has increased".  Return an inner function with years (yrs) as a parameter and declare a variable for growth rate (r) of 5%. Console log your calculation.
+        //- Write an outer function called stockGain that has cost basis (basis) as a parameter; 
+        //declare a variable called message that holds " is how much the stock has increased".  
+        //Return an inner function with years (yrs) as a parameter and declare a variable for growth rate (r) of 5%. Console log your calculation.
 
         //your code
 
 
-        // Once finished, declare a variable called futureValue that holds your stockGain function and enter any amount for the cost basis and a number for the number of years.  Run the function returned by the higher order function to display the future value of the stock.  
+        // Once finished, declare a variable called futureValue that holds your stockGain function
+        // and enter any amount for the cost basis and a number for the number of years.  
+        //Run the function returned by the higher order function to display the future value of the stock.  
 
         //your code...
 
